@@ -12,22 +12,26 @@ const AskQuestion = () => {
   const dispatch = useDispatch();
   const User = useSelector((state) => (state.currentUserReducer));
   const navigate = useNavigate();
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (User) {
+          if (questionTitle && questionBody && questionTags) {
+            dispatch(
+              askQuestion(
+                {
+                  questionTitle,
+                  questionBody,
+                  questionTags,
+                  userPosted: User.result.name,
+                },
+                navigate
+              )
+            );
+          } else alert("Please enter all the fields");
+        } else alert("Login or Signup to ask  a question");
+      };
     
-    dispatch(askQuestion(
-        {
-          questionTitle,
-          questionBody,
-          questionTags,
-          userPosted: User.result.name,
-          userId: User?.result._id
-        },
-        navigate))
-        
-    }
       
       
       const handleEnter = (e) => {

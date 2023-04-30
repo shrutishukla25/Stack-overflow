@@ -57,13 +57,21 @@ const handlePostAns = (e, answerLength) => {
         dispatch(deleteQuestion(id, Navigate));
       };
       const handleUpVote = () => {
+        if (User === null) {
+            alert("Login or Signup to up vote a question");
+            Navigate("/Auth");
+          } else{
         dispatch(voteQuestion(id, "upVote",User.result._Id));
-        
+          }
       };
     
       const handleDownVote = () => {
+        if (User === null) {
+            alert("Login or Signup to down vote a question");
+            Navigate("/Auth");
+          } else{
         dispatch(voteQuestion(id, "downVote",User.result._Id));
-        };
+      }};
     
   
 
@@ -153,3 +161,4 @@ return (
 }
 
 export default QuestionsDetails
+

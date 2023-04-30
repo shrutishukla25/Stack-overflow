@@ -1,6 +1,5 @@
 import * as api from '../api'
-import { setCurrentUser } from 
-'./currentUser'
+import { setCurrentUser } from './currentUser'
 export const signup =(authData,navigate)=> async (dispatch) =>{
     try{
         const {data} = await api.signUp(authData)
