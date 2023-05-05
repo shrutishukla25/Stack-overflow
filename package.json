@@ -1,5 +1,14 @@
 {
   "dependencies": {
     "npm-git-install": "^0.3.0"
-  }
+  },
+  "name": "stack-overflow",
+  "description": "Use the above command on client and server side to install dependencies.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shruti",
+  "license": "ISC"
 }
