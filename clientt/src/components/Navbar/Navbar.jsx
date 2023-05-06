@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleLogout = {id: "[hexValue]", token: "[userToken]"}
+    //const handleLogout = {id: "[hexValue]", token: "[userToken]"}
     const token = User?.token;
     if (token) {
       const decodedToken = decode(token);
